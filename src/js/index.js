@@ -16,12 +16,12 @@ function SimpleCounter(props) {
 			<div className="calendar">
 				<i className="fa fa-clock" />
 			</div>
-			<div className="six">{props.digitSix}</div>
-			<div className="five">{props.digitFive}</div>
-			<div className="four">{props.digitFour}</div>
-			<div className="three">{props.digitThree}</div>
-			<div className="two">{props.digitTwo}</div>
-			<div className="one">{props.digitOne}</div>
+			<div className="six">{props.digitSix % 10}</div>
+			<div className="five">{props.digitFive % 10}</div>
+			<div className="four">{props.digitFour % 10}</div>
+			<div className="three">{props.digitThree % 10}</div>
+			<div className="two">{props.digitTwo % 10}</div>
+			<div className="one">{props.digitOne % 10}</div>
 		</div>
 	);
 }
@@ -37,12 +37,12 @@ SimpleCounter.propTypes = {
 
 let counter = 0;
 setInterval(function() {
-	const six = Math.floor(counter / 1000000);
-	const five = Math.floor(counter / 100000);
-	const four = Math.floor(counter / 10000);
-	const three = Math.floor(counter / 1000);
-	const two = Math.floor(counter / 100);
-	const one = Math.floor(counter / 10);
+	const six = Math.floor(counter / 100000);
+	const five = Math.floor(counter / 10000);
+	const four = Math.floor(counter / 1000);
+	const three = Math.floor(counter / 100);
+	const two = Math.floor(counter / 10);
+	const one = Math.floor(counter / 1);
 	counter++;
 	//render your react application
 	ReactDOM.render(
